@@ -7,11 +7,17 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
     "bootstrap": "^4.6.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "init": "^0.1.2",
+    "passport": "^0.4.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
     "reactstrap": "^8.9.0",
+    "routes": "^2.1.0",
+    "sequelize": "^6.5.0",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
