@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { Col, Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
+import Logo from "../assets/images/MarketPage-logo.png";
 
 
 function NavTabs(props) {
@@ -11,7 +12,7 @@ function NavTabs(props) {
         <ul className="nav nav-tabs">
           <Col xs=".5">
             <li className="nav-item">
-              <img src="https://via.placeholder.com/100x38" />
+              <img src={Logo} />
             </li>
           </Col>
           <Col xs=".5">
@@ -41,9 +42,7 @@ function NavTabs(props) {
             </Dropdown>
           </div>
           </Col>
-          <li className="nav-item">
-          <Col></Col>
-          </li>
+          <Col className="navbar"></Col>
           <Col xs=".5">
           <li className="nav-item">
             <a

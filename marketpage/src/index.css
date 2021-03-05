@@ -4,7 +4,7 @@
 }
 
 /******Navigation Bar*******/
-.navigation, .nav-item, .nav, .nav-tabs, .nav-link {
+.navigation, .nav-item, .nav, .nav-tabs, .nav-link, .navbar {
   line-height: 20px;
   color: white;
   background-color: #6c757d;
@@ -31,4 +31,14 @@
 
 .side-post {
   height: 126px;
+}
+
+/******Background*******/
+
+.background {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+  opacity: .4;
 }
