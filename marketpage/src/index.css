@@ -3,6 +3,10 @@
   color: white;
 }
 
+.center-text {
+  text-align: center;
+}
+
 /******Navigation Bar*******/
 .navigation, .nav-item, .nav, .nav-tabs, .nav-link, .navbar {
   line-height: 20px;
@@ -12,6 +16,7 @@
 
 .nav-link:hover {
   color: #b4c1ce;
+  background-color: #5a6268;
 }
 
 .nav-tabs {
@@ -31,6 +36,16 @@
 
 .side-post {
   height: 126px;
+}
+
+/******Log In*******/
+.login {
+  margin-top: 7%;
+}
+
+/******Sign Up*******/
+.signup {
+  margin-top: 7%;
 }
 
 /******Background*******/
