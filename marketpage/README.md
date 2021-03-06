@@ -25,15 +25,15 @@ Head on over to the sign-up page to create your own account. Once you do so, you
 
 ## Additional Credit:
 
-> Michael Hernandez
->> [GitHub](https://github.com/MH4454)
->> [LinkedIn](https://www.linkedin.com/in/michael-hernandez-303a8ba3/)
-> Seth Kalback
->> [GitHub](https://github.com/skalback)
->> [LinkedIn](https://www.linkedin.com/in/seth-kalback-a067b091/)
-> Jacob Krueger
->> [GitHub](https://github.com/GeminiTrinity)
->> [LinkedIn](https://www.linkedin.com/in/jacobmkrueger/)
+### Michael Hernandez  
+[GitHub](https://github.com/MH4454)  
+[LinkedIn](https://www.linkedin.com/in/michael-hernandez-303a8ba3/)  
+### Seth Kalback  
+[GitHub](https://github.com/skalback)  
+[LinkedIn](https://www.linkedin.com/in/seth-kalback-a067b091/)  
+### Jacob Krueger  
+[GitHub](https://github.com/GeminiTrinity)  
+[LinkedIn](https://www.linkedin.com/in/jacobmkrueger/)
 
 ---
 
