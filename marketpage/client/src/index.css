@@ -32,10 +32,11 @@
 
 .main-post {
   height: 400px;
+  background-image: url();
 }
 
 .side-post {
-  height: 126px;
+  height: 128px;
 }
 
 /******Log In*******/
