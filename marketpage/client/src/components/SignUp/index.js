@@ -1,3 +1,4 @@
+import Background from "../background";
 import React, { Component } from "react";
 import { Container } from "reactstrap"
 
@@ -5,6 +6,7 @@ export default class SignUpPage extends Component {
     render() {
         return (
             <Container className="signup">
+                <Background />
             <form>
                 <h3 className="center-text">Register</h3>
 
