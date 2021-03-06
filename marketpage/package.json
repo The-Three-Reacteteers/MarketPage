@@ -2,29 +2,43 @@
   "name": "marketpage",
   "version": "0.1.0",
   "private": true,
+  "description": "A web application that looks at books prices, ratings, and related book information",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
+  },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.8.1",
+    "babel-jest": "^24.9.0",
     "bootstrap": "^4.6.0",
+    "eslint": "^6.6.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "init": "^0.1.2",
+    "jest": "^24.9.0",
     "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "reactstrap": "^8.9.0",
     "routes": "^2.1.0",
     "sequelize": "^6.5.0",
-    "web-vitals": "^1.1.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "web-vitals": "^1.1.0",
+    "webpack": "^4.42.0",
+    "webpack-dev-server": "^3.11.0"
   },
   "eslintConfig": {
     "extends": [
