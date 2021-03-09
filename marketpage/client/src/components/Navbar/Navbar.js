@@ -1,14 +1,17 @@
 import { React, useState } from "react";
 import { Col, Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
-import Logo from "../assets/images/MarketPage-logo.png";
+import Logo from "../../assets/MarketPage-logo.png";
 
 
-function NavTabs(props) {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const toggle = () => setDropdownOpen(!dropdownOpen);
-  return (
-    <div class="navigation">
+const Navbar = (props) => {
+
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
+    const toggle = () => setDropdownOpen(!dropdownOpen);
+
+    return (
+        <div class="navigation">
         <ul className="nav nav-tabs">
           <Col xs=".5">
             <li className="nav-item">
@@ -67,7 +70,7 @@ function NavTabs(props) {
           </Col>
         </ul>
     </div>
-  );
+    )
 }
 
-export default NavTabs;
+export default Navbar

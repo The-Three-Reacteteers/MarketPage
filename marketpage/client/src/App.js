@@ -1,18 +1,22 @@
-import MarketPage from "./components/Container";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import HomePage from "./components/Home";
+ import React from "react"
+ import { BrowserRouter as Router, Route } from "react-router-dom";
+ import Navbar from "./components/Navbar/Navbar"
+// import HomePage from "./components/Home/Homepage"
+// import Footer from "./components/Footer/Footer"
+
+
 
 function App() {
   return (
     <>
-    <MarketPage />
     <Router>
-      <Route exact path="/" component={HomePage} /> 
-      <Route />
-      <Route />
-      <Route />
-      <Route />
-      <Route />
+      <Navbar />
+      <Route exact path="/" /> 
+      <Route exact path="/" />
+      <Route exact path="/" />
+      <Route exact path="/" />
+      <Route exact path="/" />
+      <Route exact path="/" />
     </Router>
     </>
   );

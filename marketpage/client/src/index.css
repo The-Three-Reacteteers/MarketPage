@@ -1,60 +1,13 @@
-* {
-  background-color: #43484d;
-  color: white;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.center-text {
-  text-align: center;
-}
-
-/******Navigation Bar*******/
-.navigation, .nav-item, .nav, .nav-tabs, .nav-link, .navbar {
-  line-height: 20px;
-  color: white;
-  background-color: #6c757d;
-}
-
-.nav-link:hover {
-  color: #b4c1ce;
-  background-color: #5a6268;
-}
-
-.nav-tabs {
-  font-size: 18px;
-  text-align: center;
-}
-
-.align-right {
-  margin-left: 30%;
-}
-
-/******Homepage*******/
-
-.main-post {
-  height: 400px;
-  background-image: url();
-}
-
-.side-post {
-  height: 128px;
-}
-
-/******Log In*******/
-.login {
-  margin-top: 7%;
-}
-
-/******Sign Up*******/
-.signup {
-  margin-top: 7%;
-}
-
-/******Background*******/
-
-.background {
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: .1;
-  z-index: -1;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }

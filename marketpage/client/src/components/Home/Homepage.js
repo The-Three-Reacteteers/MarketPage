@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap"
 import Image from 'react-bootstrap/Image'
 import { Link } from "react-router-dom";
 
-const HomePage = () => {
+const Homepage = () => {
     return (
         <>
     <Container className="mt-5">
@@ -30,7 +30,7 @@ const HomePage = () => {
         </Row>
     </Container>
     </>
-    );
+    )
 }
 
-export default HomePage
+export default Homepage

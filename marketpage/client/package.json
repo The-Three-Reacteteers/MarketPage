@@ -1,25 +1,42 @@
 {
-  "name": "mern",
-  "version": "0.1.0",
+  "name": "marketpage",
+  "version": "1.0.0",
+  "description": "So you say you're a fan of books? If so, come on over to MarketPage, your one-stop shop for everything Book! Set up your collection, look up new books, see pricing, ratings, and even create a wish list to expand that vast vat of volumes that you own!",
   "private": true,
   "proxy": "http://localhost:3001/",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.3"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [],
+  "authors": [
+    "GeminiTrinity",
+    "MH4454",
+    "Skalback"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.5.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
+    "reactstrap": "^8.9.0"
+  }
 }
