@@ -1,0 +1,22 @@
+.navigation, .nav-item, .nav, .nav-tabs, .nav-link, .navbar {
+    line-height: 45px;
+    color: white;
+    background-color: #3e4750;
+  }
+  .nav-link:hover {
+    color: #b4c1ce;
+    background-color: #5a6268;
+  }
+  .nav-tabs {
+    font-size: 18px;
+    text-align: center;
+  }
+  .align-right {
+    margin-left: 30%;
+  }
+
+  .btn, .nav-item, .dropdown, .btn-secondary {
+    background-color: #3e4750 !important;
+    border-color: #3e4750 !important;
+    line-height: 50px !important;
+  }

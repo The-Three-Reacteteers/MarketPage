@@ -1,6 +1,7 @@
  import React from "react"
  import { BrowserRouter as Router, Route } from "react-router-dom";
- import Navbar from "./components/Navbar/Navbar"
+ import Navbar from "./components/Navbar/Navbar";
+ import Userpage from "./components/Userpage/UserPage";
 // import HomePage from "./components/Home/Homepage"
 // import Footer from "./components/Footer/Footer"
 
@@ -11,12 +12,7 @@ function App() {
     <>
     <Router>
       <Navbar />
-      <Route exact path="/" /> 
-      <Route exact path="/" />
-      <Route exact path="/" />
-      <Route exact path="/" />
-      <Route exact path="/" />
-      <Route exact path="/" />
+      <Userpage />
     </Router>
     </>
   );
