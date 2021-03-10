@@ -1,11 +1,23 @@
 import React from 'react'
+import Profile from "./Profile"
+import Collection from "./Collection"
+import Wishlist from "./Wishlist"
+import Navigation from "./Navbar.js"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-const UserPage = () => {
+const Userpage = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+        <Router>
+            <Navigation />
+                <Switch>
+                    <Route path="/" exact component={Profile}/>
+                    <Route path="/collection" component={Collection} />
+                    <Route path="/wishlist" component={Wishlist} />
+                </Switch>
+        </Router>
+        </>
     )
 }
 
-export default UserPage
+export default Userpage
