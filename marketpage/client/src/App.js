@@ -11,8 +11,13 @@ function App() {
   return (
     <>
     <Router>
-      <Navbar />
-      <Userpage />
+    <Navbar />
+      <Route exact path="/" component={HomePage}/> 
+      <Route exact path="/" />
+      <Route exact path="/" />
+      <Route exact path="/" />
+      <Route exact path="/" />
+      <Route exact path="/" />
     </Router>
     </>
   );
