@@ -1,8 +1,8 @@
  import React from "react"
  import { BrowserRouter as Router, Route } from "react-router-dom";
- import 'bootstrap/dist/css/bootstrap.min.css';
- import Navbar from "./components/Navbar/Navbar"
- import HomePage from "./components/Home/Homepage"
+ import Navbar from "./components/Navbar/Navbar";
+ import Userpage from "./components/Userpage/UserPage";
+// import HomePage from "./components/Home/Homepage"
 // import Footer from "./components/Footer/Footer"
 
 

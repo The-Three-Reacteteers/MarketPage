@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Col, Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
 import Logo from "../../assets/MarketPage-logo.png";
-
+import "./Navbar.css";
 
 
 const Navbar = (props) => {
