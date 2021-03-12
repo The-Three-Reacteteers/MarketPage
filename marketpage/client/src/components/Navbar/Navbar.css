@@ -23,3 +23,7 @@
     border-color: #3e4750 !important;
     line-height: 50px !important;
   }
+
+  .Search-field {
+    vertical-align: baseline;
+  }

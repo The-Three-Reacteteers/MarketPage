@@ -34,7 +34,7 @@ const Collection = () => {
                                 </Row>
                                 <Row>
                                 <Button variant="secondary" size="sm" active>
-                                    Remove
+                                    <div className="small-text">Remove</div>
                                 </Button>
                                 </Row>
                             </Col>
@@ -44,7 +44,7 @@ const Collection = () => {
             </Card>
         </Col>
         <Col xs="1">
-            <Button variant="secondary" size="sm" active className="manually-add">
+            <Button variant="secondary" size="sm" active>
                 Manually Add
             </Button>
         </Col>
