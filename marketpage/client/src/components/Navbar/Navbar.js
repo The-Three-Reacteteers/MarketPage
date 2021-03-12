@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { Col, Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
 import Logo from "../../assets/MarketPage-logo.png";
+import { Form, FormControl, Button } from "react-bootstrap";
 import "./Navbar.css";
 
 
@@ -45,6 +46,10 @@ const Navbar = (props) => {
             </Dropdown>
           </div>
           </Col>
+          <Form inline>
+            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <Button variant="outline-light">Search</Button>
+          </Form>
           <Col className="navbar"></Col>
           <Col xs=".5">
           <li className="nav-item">
