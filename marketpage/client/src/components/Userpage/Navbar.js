@@ -1,26 +1,29 @@
 import React from 'react'
 import { Nav } from "react-bootstrap"
-import { Container } from "reactstrap"
+import { Container, Col } from "reactstrap"
 import { Link } from "react-router-dom";
 import "./UserPage.css"
 
 const Navigation = () => {
     return (
-        <Container className="user-nav">
-            <Nav fill variant="tabs" defaultActiveKey="/home">
-                <Nav.Item> 
-                    <Nav.Link href="/home" className="user-nav-tab">
-                        <Link to="/">Your Profile</Link></Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link eventKey="link-1" className="user-nav-tab">
-                        <Link to="/collection">Collection</Link></Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link eventKey="link-2" className="user-nav-tab">
-                        <Link to="/wishlist">Wish List</Link></Nav.Link>
-                </Nav.Item>
-            </Nav>
+        <Container>
+            <Col>
+                <Nav fill variant="tabs" defaultActiveKey="">
+                    <Nav.Item> 
+                        <Nav.Link href="" className="user-nav-tab">
+                            <Link to="/profile"><p>Your Profile</p></Link></Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="" className="user-nav-tab">
+                            <Link to="/collection"><p>Collection</p></Link></Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="" className="user-nav-tab">
+                            <Link to="/wishlist"><p>Wish List</p></Link></Nav.Link>
+                    </Nav.Item>
+                </Nav>
+            </Col>
+            <br></br>
         </Container>
     )
 }

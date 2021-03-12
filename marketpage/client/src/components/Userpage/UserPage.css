@@ -1,7 +1,58 @@
-.user-nav {
-    margin-top: 10px;
+.user-nav-tab {
+    line-height: 10px;
+    height: 30px;
+    padding-left: 250px;
+    padding-right: 250px;
 }
 
-.user-nav-tab {
-    line-height: 15px;
+p {
+    font-size: 16px;
+}
+
+.card {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+}
+
+.card-header {
+    font-size: 40px;
+    color: rgb(85, 85, 85) !important;
+    text-align: center;
+}
+.profile-text {
+    font-size: 30px;
+    color: rgb(85, 85, 85) !important;
+    line-height: 100px;
+    text-align: center;
+}
+
+.collection-text {
+    color: black !important;
+}
+
+.book-image {
+    display: block;
+    margin: auto;
+}
+
+.book-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.book-author {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.book-desc {
+    font-size: 14px;
+}
+
+.remove {
+    margin: auto;
+    text-align: center;
+    margin-left: 10px;
+    line-height: 40px;
 }
