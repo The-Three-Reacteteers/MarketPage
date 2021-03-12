@@ -1,14 +1,15 @@
 import React from "react";
-import { Container } from "reactstrap"
-import BgImage from "../../assets/images/MarketPage.png"
+import { Container } from "reactstrap";
+import "./SignUp.css";
+// import BgImage from "../../assets/MarketPage.png"
 
 
 const SignUp = () => {
     return (
         <Container className="signup">
-                <BgImage />
+                {/* <BgImage /> */}
             <form>
-                <h3 className="center-text">Register</h3>
+                <h3 className="center-text">Sign Up</h3>
 
                 <div className="form-group">
                     <label>First name</label>
@@ -30,7 +31,7 @@ const SignUp = () => {
                     <input type="password" className="form-control" placeholder="Enter password" />
                 </div>
 
-                <button type="submit" className="btn btn-dark btn-lg btn-block">Register</button>
+                <button type="submit" className="btn btn-dark btn-lg btn-block">Sign Up</button>
             </form>
         </Container>
     )

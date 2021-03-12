@@ -1,11 +1,12 @@
 import React from 'react'
-import BgImage from "../../assets/images/MarketPage.png"
-import { Container } from "reactstrap"
+// import BgImage from "../../assets/MarketPage.png"
+import { Container } from "reactstrap";
+import "./Login.css";
 
-const Login = () => {
+const LogIn = () => {
     return (
         <Container className="login">
-                <BgImage />
+                {/* <BgImage /> */}
             <form>
                 <h3 className="center-text">Log in</h3>
                 <div className="form-group">
@@ -23,4 +24,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default LogIn
