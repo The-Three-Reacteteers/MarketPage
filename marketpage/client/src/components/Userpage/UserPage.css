@@ -1,8 +1,6 @@
 .user-nav-tab {
     line-height: 10px;
     height: 30px;
-    padding-left: 250px;
-    padding-right: 250px;
 }
 
 p {
@@ -55,4 +53,8 @@ p {
     text-align: center;
     margin-left: 10px;
     line-height: 40px;
+}
+
+.manually-add {
+    float: left;
 }

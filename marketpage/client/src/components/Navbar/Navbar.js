@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { React, useState } from "react";
 import { Col, Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
 import Logo from "../../assets/MarketPage-logo.png";
 import "./Navbar.css";
@@ -32,7 +32,7 @@ const Navbar = (props) => {
           <Col xs=".5">
           <div>
             <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
-              <DropdownToggle>
+              <DropdownToggle className="drop-button">
                 Discover ⮟
               </DropdownToggle>
               <DropdownMenu>
@@ -49,7 +49,7 @@ const Navbar = (props) => {
           <Col xs=".5">
           <li className="nav-item">
             <a
-              href="#SignUp"
+              href="signup"
               onClick={() => props.handlePageChange("SignUp")}
               className={props.currentPage === "SignUp" ? "nav-link active" : "nav-link"}
             >
@@ -60,7 +60,7 @@ const Navbar = (props) => {
           <Col xs=".5">
           <li className="nav-item">
             <a
-              href="#LogIn"
+              href="login"
               onClick={() => props.handlePageChange("LogIn")}
               className={props.currentPage === "LogIn" ? "nav-link active" : "nav-link"}
             >
