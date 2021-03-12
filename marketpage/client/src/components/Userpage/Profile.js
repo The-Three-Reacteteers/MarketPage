@@ -1,10 +1,18 @@
-import React from 'react'
+import React from 'react';
+import Card from 'react-bootstrap/card';
 
 const Profile = () => {
     return (
-        <div>
-            <h1>Profile Page</h1>
-        </div>
+        <Card>
+            <Card.Header className="profile-title">Welcome, User!</Card.Header>
+            <Card.Body>
+                <Card.Text className="profile-text">
+                    Welcome back to MarketPage!
+                    <br></br>
+                    Use the navigation above to check out your collection and wishlist!
+                </Card.Text>
+            </Card.Body>
+        </Card>
     )
 }
 

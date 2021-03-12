@@ -11,7 +11,7 @@ const Userpage = () => {
         <Router>
             <Navigation />
                 <Switch>
-                    <Route path="/" exact component={Profile}/>
+                    <Route path="/profile" component={Profile}/>
                     <Route path="/collection" component={Collection} />
                     <Route path="/wishlist" component={Wishlist} />
                 </Switch>

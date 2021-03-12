@@ -2,7 +2,7 @@
  import { BrowserRouter as Router, Route } from "react-router-dom";
  import Navbar from "./components/Navbar/Navbar";
  import Userpage from "./components/Userpage/UserPage";
-// import HomePage from "./components/Home/Homepage"
+import HomePage from "./components/Home/Homepage"
 // import Footer from "./components/Footer/Footer"
 
 
@@ -13,7 +13,7 @@ function App() {
     <Router>
     <Navbar />
       <Route exact path="/" component={HomePage}/> 
-      <Route exact path="/" />
+      <Route exact path="/profile" component={Userpage} />
       <Route exact path="/" />
       <Route exact path="/" />
       <Route exact path="/" />

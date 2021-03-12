@@ -21,7 +21,7 @@ const Navbar = (props) => {
           <Col xs=".5">
           <li className="nav-item">
             <a
-              href="#home"
+              href="/"
               onClick={() => props.handlePageChange("Home")}
               className={props.currentPage === "Home" ? "nav-link active" : "nav-link"}
             >
