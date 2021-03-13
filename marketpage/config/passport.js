@@ -1,14 +1,24 @@
 const passport = require('passport')
 const LocalStrategy = require("passport-local").Strategy
+const User = require('../models/user')
 
-// const db = require('../models')
+// Needed for passport to work correctly
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
+passport.deserializeUser((id, done) =>{
+    User.findById(id, (err,user)) =>{
+        done(err, user);
+    }
+  
+});
 
 passport.use(new LocalStrategy(
-    function (username, password, done) {
+    function ({username:"email"}, (email, password, done) {
         // Query db for a user with entered username
         db.User.findOne({
             where: {
-                username: username
+                username: "email"
             }
         }).then(dbUser => {
             // If username does not match any user in db
@@ -26,14 +36,5 @@ passport.use(new LocalStrategy(
     }
 ));
 
-// Needed for passport to work correctly
-passport.serializeUser(function (user, cb) {
-    cb(null, user);
-});
-passport.deserializeUser(function (obj, cb) {
-    cb(null, obj);
-});
-
-// Exporting our configured passport
 module.exports = passport;
 
