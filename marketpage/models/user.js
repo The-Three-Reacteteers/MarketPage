@@ -1,34 +1,25 @@
-module.exports = function (sequelize, Datatypes) {
-    const User = sequelize.define("User", {
-        username: {
-            type: Datatypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                len: [1, 140],
-            }
-        },
-        password: {
-            type: Datatypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1, 255]
-            }
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const userSchema = new Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  books: [
+    {
+    title: { type: String, required: true },
+    author: { type: String, required: true },
+    isbn: String,
+    edition: String,
+    publisher: String,
+    year: Number,
+    date: {
+        type: Date,
+        default: Date.now
         }
-    });
+    },
+  ],
+});
 
-    User.associate = function(models) {
-        // Associating User with Books
-        // When an User is deleted, also delete any associated books from their library
-        User.hasMany(models.Books, {
-          onDelete: "cascade"
-        });
-      };    
+const User = mongoose.model("User", userSchema);
 
-    // Custom prototype method to check user password against database
-    User.prototype.validPassword = function (password) {
-        return password === this.password
-    };
-
-    return User;
-};
+module.exports = User;
