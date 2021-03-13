@@ -6,7 +6,7 @@ import HomePage from "./components/Home/Homepage";
 import SignUp from "./components/SignUp/SignUp";
 import LogIn from "./components/LogIn/Login";
 import ManualAdd from "./components/ManualAdd/ManualAdd";
-// import Footer from "./components/Footer/Footer"
+import Footer from "./components/Footer/Footer";
 
 
 
@@ -22,6 +22,7 @@ function App() {
       <Route exact path="/manual" component={ManualAdd}/>
       <Route exact path="/" />
     </Router>
+    {/* <Footer /> */}
     </>
   );
 }
