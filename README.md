@@ -10,7 +10,6 @@
 - [My Information](#my-information)
 
 ---
-<br>
 
 ## Description: 
 So you say you're a fan of books? If so, come on over to MarketPage, your one-stop shop for everything Book! Set up your collection, look up new books, see pricing, ratings, and even create a wish list to expand that vast vat of volumes that you own!
