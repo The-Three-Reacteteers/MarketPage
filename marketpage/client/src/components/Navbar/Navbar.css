@@ -1,12 +1,14 @@
-.navigation, .nav-item, .nav, .nav-tabs, .nav-link, .navbar {
+.navigation, .nav-item, .nav, .nav-tabs, .nav-link {
     line-height: 47px;
     color: white;
-    background-color: #3e4750;
+    background-color: #909fad;
   }
   
   .nav-link:hover {
-    color: #b4c1ce;
-    background-color: #5a6268;
+    color: #000000;
+    background-color: #ffffff;
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
   }
 
   .nav-tabs {
@@ -19,8 +21,6 @@
   }
 
 .nav-item, .dropdown, .drop-button {
-    background-color: #3e4750 !important;
-    border-color: #3e4750 !important;
     line-height: 50px !important;
   }
 

@@ -33,7 +33,7 @@ const Collection = () => {
                                     Price: $26.90
                                 </Row>
                                 <Row>
-                                <Button variant="secondary" size="sm" active>
+                                <Button className="buttons" size="sm" active>
                                     <div className="small-text">Remove</div>
                                 </Button>
                                 </Row>
@@ -44,7 +44,7 @@ const Collection = () => {
             </Card>
         </Col>
         <Col xs="1">
-            <Button variant="secondary" size="sm" active>
+            <Button className="buttons" size="sm" active>
                 Manually Add
             </Button>
         </Col>
