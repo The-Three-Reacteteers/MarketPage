@@ -33,12 +33,12 @@ const Wishlist = () => {
                                         Price: $34.91
                                     </Row>
                                     <Row>
-                                    <Button variant="secondary" size="sm" active>
+                                    <Button className="buttons" size="sm" active>
                                         <div className="small-text">Add to Collection</div>
                                     </Button>
                                     </Row>
                                     <Row>
-                                    <Button variant="secondary" size="sm" active className="space">
+                                    <Button className="buttons space" size="sm">
                                         <div className="small-text">Remove</div>
                                     </Button>
                                     </Row>
@@ -49,7 +49,7 @@ const Wishlist = () => {
                 </Card>
             </Col>
             <Col xs="1">
-                <Button variant="secondary" size="sm" active>
+                <Button className="buttons" size="sm" active>
                     Manually Add
                 </Button>
             </Col>

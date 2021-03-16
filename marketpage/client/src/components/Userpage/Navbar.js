@@ -8,18 +8,18 @@ const Navigation = () => {
     return (
         <Container>
             <Col>
-                <Nav fill variant="tabs" defaultActiveKey="">
-                    <Nav.Item> 
+                <Nav fill variant="tabs" defaultActiveKey=""> 
+                    <Nav.Item > 
                         <Nav.Link href="" className="user-nav-tab">
-                            <Link to="/profile"><p>Your Profile</p></Link></Nav.Link>
+                            <Link to="/profile"><p className="small-nav">Your Profile</p></Link></Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link href="" className="user-nav-tab">
-                            <Link to="/collection"><p>Collection</p></Link></Nav.Link>
+                            <Link to="/collection"><p className="small-nav">Collection</p></Link></Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link href="" className="user-nav-tab">
-                            <Link to="/wishlist"><p>Wish List</p></Link></Nav.Link>
+                            <Link to="/wishlist"><p className="small-nav">Wish List</p></Link></Nav.Link>
                     </Nav.Item>
                 </Nav>
             </Col>
