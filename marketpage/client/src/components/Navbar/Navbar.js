@@ -30,22 +30,6 @@ const Navbar = (props) => {
             </a>
           </li>
           </Col>
-          <Col xs=".5">
-          <div>
-            <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
-              <DropdownToggle className="drop-button">
-                Discover ⮟
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>Genre 1</DropdownItem>
-                <DropdownItem>Genre 2</DropdownItem>
-                <DropdownItem>Genre 3</DropdownItem>
-                <DropdownItem>Genre 4</DropdownItem>
-                <DropdownItem>Genre 5</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-          </Col>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-light">Search</Button>
