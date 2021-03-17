@@ -79,8 +79,8 @@ const Search = () => {
                     style={{width: "100%"}}
                       src={
                         (doc.cover_i && doc.cover_i>0)
-                          ? `http://covers.openlibrary.org/b/id/${doc.cover_i}-S.jpg`
-                          : "https://openlibrary.org/images/icons/avatar_book-sm.png"
+                          ? `http://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`
+                          : "https://openlibrary.org/images/icons/avatar_book-lg.png"
                       }
                       alt="Cover"
                     />
