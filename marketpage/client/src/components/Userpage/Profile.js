@@ -8,7 +8,7 @@ const Profile = () => {
         <>
         <Navigation />
             <Card>
-                <Card.Header className="profile-title">Welcome, User!</Card.Header>
+                <Card.Header className="profile-title">Welcome!</Card.Header>
                 <Card.Body>
                     <Card.Text className="profile-text">
                         Welcome back to MarketPage!

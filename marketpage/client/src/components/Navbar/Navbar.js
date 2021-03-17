@@ -30,10 +30,17 @@ const Navbar = (props) => {
             </a>
           </li>
           </Col>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-lg-4" />
-            <Button variant="outline-light">Search</Button>
-          </Form>
+          <Col xs=".5">
+          <li className="nav-item">
+            <a
+              href="search"
+              onClick={() => props.handlePageChange("Search")}
+              className={props.currentPage === "Search" ? "nav-link active" : "nav-link"}
+            >
+              Search
+            </a>
+          </li>
+          </Col>
           <Col className="navbar"></Col>
           <Col xs=".5">
           <li className="nav-item">

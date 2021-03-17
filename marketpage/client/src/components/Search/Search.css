@@ -1,0 +1,29 @@
+.book-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.book-author {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.book-desc {
+    font-size: 14px;
+}
+
+.search-cards {
+    margin-top: 30px;
+}
+
+.search-bar {
+    padding: 15px;
+}
+
+.buttons-center {
+    display: block;
+    margin: auto;
+    background-color: #424344 !important;
+    border-color: white !important;
+    border-radius: 6px !important;
+}
