@@ -49,7 +49,7 @@ const Search = () => {
                   value={isbn}
                   onChange={(ev) => setISBN(ev.target.value)}
                   className="form-control"
-                  placeholder="ISPN"
+                  placeholder="ISBN"
                 />
               </div>
               <Button
