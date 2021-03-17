@@ -7,8 +7,9 @@ import SignUp from "./components/SignUp/SignUp";
 import LogIn from "./components/LogIn/Login";
 import ManualAdd from "./components/ManualAdd/ManualAdd";
 import Footer from "./components/Footer/Footer";
-import Collection from "./components/Userpage/Collection"
-import Wishlist from "./components/Userpage/Wishlist"
+import Collection from "./components/Userpage/Collection";
+import Wishlist from "./components/Userpage/Wishlist";
+import Search from "./components/Search/Search";
 
 
 
@@ -24,6 +25,7 @@ function App() {
       <Route exact path="/manual" component={ManualAdd}/>
       <Route exact path="/collection" component={Collection} />
       <Route exact path="/wishlist" component={Wishlist}/>
+      <Route exact path="/search" component={Search}/>
     </Router>
     {/* <Footer /> */}
     </>

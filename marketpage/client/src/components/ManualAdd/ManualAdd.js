@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Col, Row } from "reactstrap";
+import { Container, Col } from "reactstrap";
 import Toast from 'react-bootstrap/Toast'
 import { Button } from "react-bootstrap"
 import "./ManualAdd.css";
