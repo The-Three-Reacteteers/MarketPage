@@ -1,12 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Userpage from "./components/Userpage/UserPage";
+import Profile from "./components/Userpage/Profile";
 import HomePage from "./components/Home/Homepage";
 import SignUp from "./components/SignUp/SignUp";
 import LogIn from "./components/LogIn/Login";
 import ManualAdd from "./components/ManualAdd/ManualAdd";
 import Footer from "./components/Footer/Footer";
+import Collection from "./components/Userpage/Collection"
+import Wishlist from "./components/Userpage/Wishlist"
 
 
 
@@ -16,11 +18,12 @@ function App() {
     <Router>
     <Navbar />
       <Route exact path="/" component={HomePage}/> 
-      <Route exact path="/profile" component={Userpage} />
+      <Route exact path="/profile" component={Profile} />
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/login" component={LogIn} />
       <Route exact path="/manual" component={ManualAdd}/>
-      <Route exact path="/" />
+      <Route exact path="/collection" component={Collection} />
+      <Route exact path="/wishlist" component={Wishlist}/>
     </Router>
     {/* <Footer /> */}
     </>
