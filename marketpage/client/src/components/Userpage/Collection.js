@@ -1,10 +1,12 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Col, Row } from "reactstrap";
+import Navigation from "./Navbar"
 
 const Collection = () => {
     return (
         <>
+        <Navigation />
         <Row>
         <Col>
             <Card>
@@ -44,7 +46,7 @@ const Collection = () => {
             </Card>
         </Col>
         <Col xs="1">
-            <Button className="buttons" size="sm" active>
+            <Button a href="/manual" className="buttons" size="sm" active>
                 Manually Add
             </Button>
         </Col>

@@ -57,6 +57,17 @@ const Navbar = (props) => {
             </a>
           </li>
           </Col>
+          <Col xs=".5">
+          <li className="nav-item">
+            <a
+              href="profile"
+              onClick={() => props.handlePageChange("Userpage")}
+              className={props.currentPage === "Userpage" ? "nav-link active" : "nav-link"}
+            >
+              Your Profile
+            </a>
+          </li>
+          </Col>
         </ul>
     </div>
     )

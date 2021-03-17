@@ -17,7 +17,7 @@ p {
     color: white;
 }
 
-.card {
+.card, .logo {
     display: block;
     margin: auto;
     max-width: 80%;
@@ -26,7 +26,7 @@ p {
 .card-header {
     font-size: 40px;
     color: white !important;
-    background-color: #909fad !important;
+    background-color: #424344 !important;
     text-align: center;
     
 }
@@ -75,7 +75,7 @@ p {
 }
 
 .buttons {
-    background-color: #909fad !important;
+    background-color: #424344 !important;
     border-color: white !important;
     border-radius: 6px !important;
 }
