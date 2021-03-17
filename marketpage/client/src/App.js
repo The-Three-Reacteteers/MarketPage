@@ -10,25 +10,24 @@ import Footer from "./components/Footer/Footer";
 import Collection from "./components/Userpage/Collection";
 import Wishlist from "./components/Userpage/Wishlist";
 import Search from "./components/Search/Search";
-
-
+import { BookSearchProvider } from "./data/BookSearchProvider";
 
 function App() {
   return (
-    <>
-    <Router>
-    <Navbar />
-      <Route exact path="/" component={HomePage}/> 
-      <Route exact path="/profile" component={Profile} />
-      <Route exact path="/signup" component={SignUp} />
-      <Route exact path="/login" component={LogIn} />
-      <Route exact path="/manual" component={ManualAdd}/>
-      <Route exact path="/collection" component={Collection} />
-      <Route exact path="/wishlist" component={Wishlist}/>
-      <Route exact path="/search" component={Search}/>
-    </Router>
-    {/* <Footer /> */}
-    </>
+    <BookSearchProvider>
+      <Router>
+        <Navbar />
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/login" component={LogIn} />
+        <Route exact path="/manual" component={ManualAdd} />
+        <Route exact path="/collection" component={Collection} />
+        <Route exact path="/wishlist" component={Wishlist} />
+        <Route exact path="/search" component={Search} />
+      </Router>
+      {/* <Footer /> */}
+    </BookSearchProvider>
   );
 }
 
