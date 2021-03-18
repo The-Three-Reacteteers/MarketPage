@@ -1,14 +1,14 @@
-.book-title {
+.search-book-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.search-book-author {
     font-size: 20px;
     font-weight: bold;
 }
 
-.book-author {
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.book-desc {
+.search-book-desc {
     font-size: 14px;
 }
 
@@ -17,7 +17,9 @@
 }
 
 .search-bar {
-    padding: 15px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .buttons-center {
@@ -26,4 +28,6 @@
     background-color: #424344 !important;
     border-color: white !important;
     border-radius: 6px !important;
+    width: 80%;
+    margin-bottom: 10px;
 }
