@@ -52,6 +52,9 @@ const Search = () => {
                   placeholder="ISBN"
                 />
               </div>
+            </Col>
+            </Row>
+            <Row>
               <Button
                 onClick={() => search({ author, title, isbn })}
                 className="buttons-center"
@@ -59,8 +62,7 @@ const Search = () => {
               >
                 <div className="small-text">Search</div>
               </Button>
-            </Col>
-          </Row>
+            </Row>
         </form>
       </Card>
       {loading ? (
@@ -79,30 +81,26 @@ const Search = () => {
                     style={{width: "100%"}}
                       src={
                         (doc.cover_i && doc.cover_i>0)
-                          ? `http://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`
-                          : "https://openlibrary.org/images/icons/avatar_book-lg.png"
+                          ? `http://covers.openlibrary.org/b/id/${doc.cover_i}.jpg`
+                          : "https://openlibrary.org/images/icons/avatar_book-sm.png"
                       }
                       alt="Cover"
                     />
                   </Col>
-                  <Col xs="7">
-                    <Row className="book-title">{doc.title}</Row>
-                    <Row className="book-author">{doc.author_name}</Row>
-                    <Row className="book-desc"></Row>
-                  </Col>
-                  <Col xs="2" className="remove">
+                  <Col>
+                    <Row className="search-book-title">{doc.title}</Row>
+                    <Row className="search-book-author">{doc.author_name}</Row>
+                    {/* <Row className="book-desc"></Row> */}
                     <Row className="price"></Row>
-                    <Row>
+                    <Row className="search-buttons">
                       <Button className="buttons" size="sm" active>
                         <div className="small-text">Add to Collection</div>
                       </Button>
-                    </Row>
-                    <Row>
-                      <Button className="buttons space" size="sm">
+                      <Button className="buttons" size="sm">
                         <div className="small-text">Add to Wishlist</div>
                       </Button>
                     </Row>
-                  </Col>
+                    </Col>
                 </Row>
               ))}
             </Card.Text>
