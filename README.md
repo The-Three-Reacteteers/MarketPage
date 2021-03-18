@@ -7,7 +7,6 @@
 - [How To Use](#how-to-use)
 - [Credit](#additional-credit)
 - [License](#license)
-- [My Information](#my-information)
 
 ---
 
