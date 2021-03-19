@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { responseParser, useAuthContext } from "./AuthProvider";
-export const BookCollectionContext = React.createContext(null);
+export const BookWishlistContext = React.createContext(null);
 
-export const BookCollectionProvider = ({ children }) => {
+export const BookWishlistProvider = ({ children }) => {
   const { user } = useAuthContext();
-  const [collection, setCollection] = useState([]);
-  const [collectionDir, setCollectionDir] = useState(null);
+  const [wishlist, setWishlist] = useState([]);
+  const [wishlistDir, setWishlistDir] = useState(null);
   const [loading, setLoading] = useState(false);
   const load = function () {
     setLoading(true);
-    return fetch(`/api/collection`)
+    return fetch(`/api/wishlist`)
       .then((response) => response.json())
       .then((data) => {
-        setCollection(data);
+        setWishlist(data);
         setLoading(false);
       })
       .catch((err) => {
@@ -20,7 +20,7 @@ export const BookCollectionProvider = ({ children }) => {
         setLoading(false);
       });
   };
-  const addToCollection = function ({
+  const addToWishlist = function ({
     key,
     title,
     edition_key: [edition],
@@ -30,7 +30,7 @@ export const BookCollectionProvider = ({ children }) => {
     isbn: [isbn],
   }) {
     setLoading(true);
-    return fetch(`/api/collection`, {
+    return fetch(`/api/wishlist`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -53,9 +53,9 @@ export const BookCollectionProvider = ({ children }) => {
         setLoading(false);
       });
   };
-  const removeCollection = function (id) {
+  const removeWishlist = function (id) {
     setLoading(true);
-    return fetch(`/api/collection/${id}`, {
+    return fetch(`/api/wishlist/${id}`, {
       method: "DELETE",
     })
       .then(responseParser)
@@ -69,31 +69,31 @@ export const BookCollectionProvider = ({ children }) => {
     load();
   }, [user]);
   useEffect(() => {
-    if (Array.isArray(collection) && collection.length) {
+    if (Array.isArray(wishlist) && wishlist.length) {
       const isbn = {};
       const cover = {};
-      const collectionDIR = {};
-      collection.map((col) => {
-        collectionDIR[col.key] = col;
+      const wishlistDIR = {};
+      wishlist.map((col) => {
+        wishlistDIR[col.key] = col;
         if (col.isbn) isbn[col.isbn] = col;
         if (col.cover_i) cover[col.cover_i] = col;
       });
-      setCollectionDir({ ...collectionDIR, isbn, cover });
+      setWishlistDir({ ...wishlistDIR, isbn, cover });
     } else {
-      setCollectionDir(null);
+      setWishlistDir(null);
     }
-  }, [collection]);
+  }, [wishlist]);
   return (
-    <BookCollectionContext.Provider
+    <BookWishlistContext.Provider
       value={{
-        collection,
-        collectionDir,
+        wishlist,
+        wishlistDir,
         loading,
-        addToCollection,
-        removeCollection,
+        addToWishlist,
+        removeWishlist,
       }}
     >
       {children}
-    </BookCollectionContext.Provider>
+    </BookWishlistContext.Provider>
   );
 };

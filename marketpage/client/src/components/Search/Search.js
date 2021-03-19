@@ -1,14 +1,31 @@
 import React, { useState, useContext } from "react";
 import { Card, Button } from "react-bootstrap";
-import { Container, Col, Row } from "reactstrap";
+import { Container, Col, Row, Jumbotron } from "reactstrap";
 import { BookSearchContext } from "../../data/BookSearchProvider";
+import { BookCollectionContext } from "../../data/BookCollectionProvider";
+import { BookWishlistContext } from "../../data/BookWishlistProvider";
+
 import "./Search.css";
+import { useAuthContext } from "../../data/AuthProvider";
 
 const Search = () => {
   const [title, setTitle] = useState("");
   const [isbn, setISBN] = useState("");
   const [author, setAuthor] = useState("");
   const { books, loading, search } = useContext(BookSearchContext);
+  const { user } = useAuthContext();
+  const {
+    addToCollection,
+    removeCollection,
+    collectionDir,
+    loading: loadingCollection,
+  } = useContext(BookCollectionContext);
+  const {
+    addToWishlist,
+    removeWishlist,
+    wishlistDir,
+    loading: loadingWishlist,
+  } = useContext(BookWishlistContext);
   return (
     <>
       <Card className="search-cards">
@@ -43,13 +60,13 @@ const Search = () => {
             </Col>
             <Col>
               <div className="form-group">
-                <label>Search by ISBN:</label>
+                <label>Search by ISPN:</label>
                 <input
                   type="text"
                   value={isbn}
                   onChange={(ev) => setISBN(ev.target.value)}
                   className="form-control"
-                  placeholder="ISBN"
+                  placeholder="ISPN"
                 />
               </div>
               <Button
@@ -63,52 +80,86 @@ const Search = () => {
           </Row>
         </form>
       </Card>
-      {loading ? (
-        "Loading.."
-      ) : (
-        <Card className="search-cards">
-          <Card.Header>
-            <h3>Search Results ({books?.docs?.length})</h3>
-          </Card.Header>
-          <Card.Body>
-            <Card.Text>
-              {books?.docs.map((doc) => (
-                <Row style={{ borderBottom: "1px solid #ccc", padding: 10 }}>
-                  <Col xs="2">
-                    <img
-                    style={{width: "100%"}}
-                      src={
-                        (doc.cover_i && doc.cover_i>0)
-                          ? `http://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`
-                          : "https://openlibrary.org/images/icons/avatar_book-lg.png"
-                      }
-                      alt="Cover"
-                    />
-                  </Col>
-                  <Col xs="7">
-                    <Row className="book-title">{doc.title}</Row>
-                    <Row className="book-author">{doc.author_name}</Row>
-                    <Row className="book-desc"></Row>
-                  </Col>
-                  <Col xs="2" className="remove">
-                    <Row className="price"></Row>
-                    <Row>
-                      <Button className="buttons" size="sm" active>
-                        <div className="small-text">Add to Collection</div>
-                      </Button>
-                    </Row>
-                    <Row>
-                      <Button className="buttons space" size="sm">
-                        <div className="small-text">Add to Wishlist</div>
-                      </Button>
-                    </Row>
-                  </Col>
-                </Row>
-              ))}
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      )}
+      <Card className="search-cards">
+        <Card.Header>
+          <h3>Search Results ({books?.docs?.length})</h3>
+        </Card.Header>
+        <Card.Body>
+          <Card.Text>
+            {books?.docs?.length ? (
+              books.docs.map((doc) => {
+                const isInCollection = collectionDir && collectionDir[doc.key];
+                const isInWishlist = wishlistDir && wishlistDir[doc.key];
+                // collectionDir?.cover[doc.cover_i] ||
+                // collectionDir?.isbn[doc.isbn];
+                return (
+                  <Row style={{ borderBottom: "1px solid #ccc", padding: 10 }}>
+                    <Col xs="2" xl="1">
+                      <img
+                        style={{ width: "100%" }}
+                        src={
+                          doc.cover_i && doc.cover_i > 0
+                            ? `http://covers.openlibrary.org/b/id/${doc.cover_i}-S.jpg`
+                            : "https://openlibrary.org/images/icons/avatar_book-sm.png"
+                        }
+                        alt="Cover"
+                      />
+                    </Col>
+                    <Col xs="7" xl="8">
+                      <Row className="book-title">{doc.title}</Row>
+                      <Row className="book-author">{doc.author_name}</Row>
+                      <Row className="book-desc"></Row>
+                    </Col>
+                    {user && (
+                      <Col xs="2" className="remove">
+                        <Row className="price"></Row>
+                        <Row>
+                          <Button className="buttons" size="sm" active>
+                            <div
+                              className="small-text"
+                              onClick={() =>
+                                isInCollection
+                                  ? removeCollection(isInCollection._id)
+                                  : addToCollection(doc)
+                              }
+                            >
+                              {loadingCollection
+                                ? "Loading"
+                                : isInCollection
+                                ? "Remove From Collection"
+                                : "Add to Collection"}
+                            </div>
+                          </Button>
+                        </Row>
+                        <Row>
+                          <Button className="buttons space" size="sm">
+                            <div
+                              className="small-text"
+                              onClick={() =>
+                                isInWishlist
+                                  ? removeWishlist(isInWishlist._id)
+                                  : addToWishlist(doc)
+                              }
+                            >
+                              {loadingWishlist
+                                ? "Loading"
+                                : isInWishlist
+                                ? "Remove From Wishlist"
+                                : "Add to Wishlist"}
+                            </div>
+                          </Button>
+                        </Row>
+                      </Col>
+                    )}
+                  </Row>
+                );
+              })
+            ) : (
+              <Jumbotron>{loading ? "Loading.." : "No Data"}</Jumbotron>
+            )}
+          </Card.Text>
+        </Card.Body>
+      </Card>
     </>
   );
 };
