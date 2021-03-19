@@ -60,13 +60,13 @@ const Search = () => {
             </Col>
             <Col>
               <div className="form-group">
-                <label>Search by ISPN:</label>
+                <label>Search by ISBN:</label>
                 <input
                   type="text"
                   value={isbn}
                   onChange={(ev) => setISBN(ev.target.value)}
                   className="form-control"
-                  placeholder="ISPN"
+                  placeholder="ISBN"
                 />
               </div>
               <Button
