@@ -6,28 +6,77 @@ import HomePage from "./components/Home/Homepage";
 import SignUp from "./components/SignUp/SignUp";
 import LogIn from "./components/LogIn/Login";
 import ManualAdd from "./components/ManualAdd/ManualAdd";
-import Footer from "./components/Footer/Footer";
 import Collection from "./components/Userpage/Collection";
 import Wishlist from "./components/Userpage/Wishlist";
 import Search from "./components/Search/Search";
 import { BookSearchProvider } from "./data/BookSearchProvider";
+import { BookCollectionProvider } from "./data/BookCollectionProvider";
+import { BookWishlistProvider } from "./data/BookWishlistProvider";
+import CheckAuth from "./components/CheckAuth";
+import { AuthProvider } from "./data/AuthProvider";
 
 function App() {
   return (
-    <BookSearchProvider>
-      <Router>
-        <Navbar />
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/login" component={LogIn} />
-        <Route exact path="/manual" component={ManualAdd} />
-        <Route exact path="/collection" component={Collection} />
-        <Route exact path="/wishlist" component={Wishlist} />
-        <Route exact path="/search" component={Search} />
-      </Router>
-      {/* <Footer /> */}
-    </BookSearchProvider>
+    <AuthProvider>
+      <BookWishlistProvider>
+        <BookCollectionProvider>
+          <BookSearchProvider>
+            <Router>
+              <Navbar />
+              <Route exact path="/" component={HomePage} />
+              <Route
+                exact
+                path="/profile"
+                component={() => (
+                  <CheckAuth>
+                    <Profile />
+                  </CheckAuth>
+                )}
+              />
+              <Route
+                exact
+                path="/collection"
+                component={() => (
+                  <CheckAuth>
+                    <Collection />
+                  </CheckAuth>
+                )}
+              />
+              <Route
+                exact
+                path="/wishlist"
+                component={() => (
+                  <CheckAuth>
+                    <Wishlist />
+                  </CheckAuth>
+                )}
+              />
+              <Route
+                exact
+                path="/signup"
+                component={() => (
+                  <CheckAuth unAuthenticatedOnly={true}>
+                    <SignUp />
+                  </CheckAuth>
+                )}
+              />
+              <Route
+                exact
+                path="/login"
+                component={() => (
+                  <CheckAuth unAuthenticatedOnly={true}>
+                    <LogIn />
+                  </CheckAuth>
+                )}
+              />
+              <Route exact path="/manual" component={ManualAdd} />
+              <Route exact path="/search" component={Search} />
+            </Router>
+            {/* <Footer /> */}
+          </BookSearchProvider>
+        </BookCollectionProvider>
+      </BookWishlistProvider>
+    </AuthProvider>
   );
 }
 

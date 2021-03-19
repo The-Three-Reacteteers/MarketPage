@@ -1,83 +1,98 @@
-import { React, useState } from "react";
-import { Col } from 'reactstrap';
+import { React } from "react";
+import { Col } from "reactstrap";
 import Logo from "../../assets/MarketPage-logo.png";
-import { Form, FormControl, Button } from "react-bootstrap";
 import "./Navbar.css";
-
+import { Link } from "react-router-dom";
+import { useAuthContext } from "../../data/AuthProvider";
 
 const Navbar = (props) => {
-
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-
-    const toggle = () => setDropdownOpen(!dropdownOpen);
-
-    return (
-        <div class="navigation">
-        <ul className="nav nav-tabs">
-          <Col xs=".5">
-            <li className="nav-item">
-              <img src={Logo} />
-            </li>
-          </Col>
-          <Col xs=".5">
+  const { user } = useAuthContext();
+  return (
+    <div className="navigation">
+      <ul className="nav nav-tabs">
+        <Col xs=".5">
           <li className="nav-item">
-            <a
-              href="/"
-              onClick={() => props.handlePageChange("Home")}
-              className={props.currentPage === "Home" ? "nav-link active" : "nav-link"}
+            <img src={Logo} />
+          </li>
+        </Col>
+        <Col xs=".5">
+          <li className="nav-item">
+            <Link
+              to="/"
+              className={
+                props.currentPage === "Home" ? "nav-link active" : "nav-link"
+              }
             >
               Home
-            </a>
+            </Link>
           </li>
-          </Col>
-          <Col xs=".5">
+        </Col>
+        <Col xs=".5">
           <li className="nav-item">
-            <a
-              href="search"
-              onClick={() => props.handlePageChange("Search")}
-              className={props.currentPage === "Search" ? "nav-link active" : "nav-link"}
+            <Link
+              to="/search"
+              className={
+                props.currentPage === "Search" ? "nav-link active" : "nav-link"
+              }
             >
               Search
-            </a>
+            </Link>
           </li>
-          </Col>
-          <Col className="navbar"></Col>
+        </Col>
+        <Col className="navbar"></Col>
+        {user === undefined ? (
+          "Loading.."
+        ) : user ? (
           <Col xs=".5">
-          <li className="nav-item">
-            <a
-              href="signup"
-              onClick={() => props.handlePageChange("SignUp")}
-              className={props.currentPage === "SignUp" ? "nav-link active" : "nav-link"}
-            >
-              Sign-Up
-            </a>
-          </li>
+            <li className="nav-item">
+              <Link
+                to="/profile"
+                className={
+                  props.currentPage === "Userpage"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                Your Profile
+              </Link>
+            </li>
           </Col>
-          <Col xs=".5">
-          <li className="nav-item">
-            <a
-              href="login"
-              onClick={() => props.handlePageChange("LogIn")}
-              className={props.currentPage === "LogIn" ? "nav-link active" : "nav-link"}
-            >
-              Log-In
-            </a>
-          </li>
-          </Col>
-          <Col xs=".5">
-          <li className="nav-item">
-            <a
-              href="profile"
-              onClick={() => props.handlePageChange("Userpage")}
-              className={props.currentPage === "Userpage" ? "nav-link active" : "nav-link"}
-            >
-              Your Profile
-            </a>
-          </li>
-          </Col>
-        </ul>
+        ) : (
+          <>
+            {" "}
+            <Col xs=".5">
+              <li className="nav-item">
+                <Link
+                  to="/signup"
+                  className={
+                    props.currentPage === "SignUp"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  Sign-Up
+                </Link>
+              </li>
+            </Col>
+            <Col xs=".5">
+              <li className="nav-item">
+                <Link
+                  to="/login"
+                  className={
+                    props.currentPage === "LogIn"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  Log-In
+                </Link>
+              </li>
+            </Col>
+          </>
+        )}
+      </ul>
     </div>
-    )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
