@@ -20,6 +20,7 @@ export const BookSearchProvider = ({ children }) => {
       .then((data) => {
         setBooks(data);
         setLoading(false);
+        console.log(data);
         return data;
       })
       .catch((err) => {

@@ -66,7 +66,10 @@ export const BookCollectionProvider = ({ children }) => {
       });
   };
   useEffect(() => {
-    load();
+    if (user !== undefined)   {
+      if (user) load();
+      else setCollection([])
+    };
   }, [user]);
   useEffect(() => {
     if (Array.isArray(collection) && collection.length) {

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../../data/AuthProvider";
 
 const Navbar = (props) => {
-  const { user } = useAuthContext();
+  const { user, logout } = useAuthContext();
   return (
     <div className="navigation">
       <ul className="nav nav-tabs">
@@ -43,6 +43,7 @@ const Navbar = (props) => {
         {user === undefined ? (
           "Loading.."
         ) : user ? (
+          <>
           <Col xs=".5">
             <li className="nav-item">
               <Link
@@ -57,6 +58,22 @@ const Navbar = (props) => {
               </Link>
             </li>
           </Col>
+            <Col xs=".5">
+              <li className="nav-item">
+                <Link
+                  to="/"
+                  onClick={logout}
+                  className={
+                    props.currentPage === "Userpage"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  Logout
+                </Link>
+              </li>
+            </Col>
+          </>
         ) : (
           <>
             {" "}

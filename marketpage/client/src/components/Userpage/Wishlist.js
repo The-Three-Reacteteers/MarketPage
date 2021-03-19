@@ -6,17 +6,13 @@ import Navigation from "./Navbar";
 
 const Wishlist = () => {
   const {
-    addToWishlist,
     removeWishlist,
     wishlist,
-    wishlistDir,
     loading: loadingWishlist,
   } = useContext(BookWishlistContext);
   return (
     <>
       <Navigation />
-      <Card>
-      <Card.Header>Your Wishlist</Card.Header>
       {wishlist?.length ? wishlist.map((doc) => (
         <Row style={{ borderBottom: "1px solid #ccc", padding: 10 }}>
           <Col xs="2" xl="1">
@@ -30,12 +26,12 @@ const Wishlist = () => {
               alt="Cover"
             />
           </Col>
-          <Col>
+          <Col xs="7" xl="8">
             <Row className="book-title">{doc.title}</Row>
             <Row className="book-author">{doc.author}</Row>
-            <Row className="book-desc"></Row>
+            {doc.isbn && <Row className="book-isbn">ISBN: {doc.isbn}</Row>}
           </Col>
-            <Col xs="1" className="remove">
+            <Col xs="2" className="remove">
               <Row className="price"></Row>
               <Row>
                 <Button className="buttons" size="sm" active>
@@ -56,7 +52,6 @@ const Wishlist = () => {
       )):(
           <Jumbotron>No Data</Jumbotron>
       )}
-      </Card>
     </>
   );
 };

@@ -31,9 +31,11 @@ p {
     
 }
 .profile-text {
-    font-size: 30px;
+    /*font-size: 30px;
     line-height: 100px;
+    */
     text-align: center;
+    
 }
 
 .collection-text {

@@ -26,9 +26,10 @@ const Search = () => {
     wishlistDir,
     loading: loadingWishlist,
   } = useContext(BookWishlistContext);
+
   return (
     <>
-<Card className="search-cards">
+      <Card className="search-cards">
         <form>
           <Card.Header>
             <h3>Search for a Book</h3>
@@ -69,9 +70,6 @@ const Search = () => {
                   placeholder="ISBN"
                 />
               </div>
-            </Col>
-            </Row>
-            <Row>
               <Button
                 onClick={() => search({ author, title, isbn })}
                 className="buttons-center"
@@ -79,7 +77,8 @@ const Search = () => {
               >
                 <div className="small-text">Search</div>
               </Button>
-            </Row>
+            </Col>
+          </Row>
         </form>
       </Card>
       <Card className="search-cards">
@@ -92,6 +91,8 @@ const Search = () => {
               books.docs.map((doc) => {
                 const isInCollection = collectionDir && collectionDir[doc.key];
                 const isInWishlist = wishlistDir && wishlistDir[doc.key];
+                const isbn = doc.isbn && doc.isbn[0];
+                const desc = doc.first_sentence?.join("\n");
                 // collectionDir?.cover[doc.cover_i] ||
                 // collectionDir?.isbn[doc.isbn];
                 return (
@@ -110,7 +111,8 @@ const Search = () => {
                     <Col xs="7" xl="8">
                       <Row className="book-title">{doc.title}</Row>
                       <Row className="book-author">{doc.author_name}</Row>
-                      <Row className="book-desc"></Row>
+                      {isbn && <Row className="book-isbn">ISBN: {isbn}</Row>}
+                      {desc && <Row className="book-desc">{desc}</Row>}
                     </Col>
                     {user && (
                       <Col xs="2" className="remove">
@@ -157,13 +159,14 @@ const Search = () => {
                 );
               })
             ) : (
-              <Jumbotron>{loading ? "Loading.." : "No Data"}</Jumbotron>
+              <Jumbotron>{loading ? "Loading.." : "No books to display"}</Jumbotron>
             )}
           </Card.Text>
         </Card.Body>
       </Card>
     </>
   );
+
 };
 
 export default Search;
