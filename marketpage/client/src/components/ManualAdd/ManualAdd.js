@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Col } from "reactstrap";
+import { Container, Col, Row } from "reactstrap";
 import Toast from 'react-bootstrap/Toast'
 import { Button } from "react-bootstrap"
 import "./ManualAdd.css";
@@ -30,12 +30,17 @@ const ManualAdd = () => {
                 </div>
 
                 <div className="form-group">
-                    <label>Book Cost</label>
+                    <label>Book Cost <small>(Optional)</small></label>
                     <input type="text" className="form-control" placeholder="Book Cost" />
                 </div>
+                <Row>
                     <Col>
-                        <Button size="large" className="buttons fit" onClick={() => setShow(true)}>Add Book</Button>
+                        <Button size="large" className="buttons fit" onClick={() => setShow(true)}>Add Book to Collection</Button>
                     </Col>
+                    <Col>
+                        <Button size="large" className="buttons fit" onClick={() => setShow(true)}>Add Book to Wishlist</Button>
+                    </Col>
+                </Row>
                     <Col xs=".5">
                         <Toast className="toast-center" onClose={() => setShow(false)} show={show} delay={3000} autohide>
                             <Toast.Header>
