@@ -69,9 +69,6 @@ const Search = () => {
                   placeholder="ISPN"
                 />
               </div>
-            </Col>
-            </Row>
-            <Row>
               <Button
                 onClick={() => search({ author, title, isbn })}
                 className="buttons-center"
@@ -79,10 +76,10 @@ const Search = () => {
               >
                 <div className="small-text">Search</div>
               </Button>
-            </Row>
+            </Col>
+          </Row>
         </form>
       </Card>
-<<<<<<< HEAD
       <Card className="search-cards">
         <Card.Header>
           <h3>Search Results ({books?.docs?.length})</h3>
@@ -163,50 +160,6 @@ const Search = () => {
           </Card.Text>
         </Card.Body>
       </Card>
-=======
-      {loading ? (
-        "Loading.."
-      ) : (
-        <Card className="search-cards">
-          <Card.Header>
-            <h3>Search Results ({books?.docs?.length})</h3>
-          </Card.Header>
-          <Card.Body>
-            <Card.Text>
-              {books?.docs.map((doc) => (
-                <Row style={{ borderBottom: "1px solid #ccc", padding: 10 }}>
-                  <Col xs="2">
-                    <img
-                    style={{width: "100%"}}
-                      src={
-                        (doc.cover_i && doc.cover_i>0)
-                          ? `http://covers.openlibrary.org/b/id/${doc.cover_i}.jpg`
-                          : "https://openlibrary.org/images/icons/avatar_book-sm.png"
-                      }
-                      alt="Cover"
-                    />
-                  </Col>
-                  <Col>
-                    <Row className="search-book-title">{doc.title}</Row>
-                    <Row className="search-book-author">{doc.author_name}</Row>
-                    {/* <Row className="book-desc"></Row> */}
-                    <Row className="price"></Row>
-                    <Row className="search-buttons">
-                      <Button className="buttons" size="sm" active>
-                        <div className="small-text">Add to Collection</div>
-                      </Button>
-                      <Button className="buttons" size="sm">
-                        <div className="small-text">Add to Wishlist</div>
-                      </Button>
-                    </Row>
-                    </Col>
-                </Row>
-              ))}
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      )}
->>>>>>> main
     </>
   );
 };
