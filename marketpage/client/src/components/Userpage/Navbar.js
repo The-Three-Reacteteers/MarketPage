@@ -31,6 +31,10 @@ const Navigation = () => {
                         }} className="user-nav-tab">
                            <p className="small-nav">Wish List</p></Nav.Link>
                     </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="*" className="user-nav-tab">
+                           <p className="small-nav">Log Out</p></Nav.Link>
+                    </Nav.Item>
                 </Nav>
             </Col>
             <br></br>
