@@ -15,6 +15,8 @@ const Collection = () => {
   return (
     <>
       <Navigation />
+      <Card>
+      <Card.Header>Your Collection</Card.Header>
       {collection?.length ? (
         collection.map((doc) => {
           return (
@@ -30,12 +32,12 @@ const Collection = () => {
                   alt="Cover"
                 />
               </Col>
-              <Col xs="7" xl="8">
+              <Col>
                 <Row className="book-title">{doc.title}</Row>
                 <Row className="book-author">{doc.author}</Row>
                 <Row className="book-desc"></Row>
               </Col>
-              <Col xs="2" className="remove">
+              <Col xs="1" className="remove">
                 <Row className="price"></Row>
                 <Row>
                   <Button className="buttons" size="sm" active>
@@ -49,11 +51,13 @@ const Collection = () => {
                 </Row>
               </Col>
             </Row>
+            
           );
         })
       ) : (
         <Jumbotron>No Data</Jumbotron>
       )}
+      </Card>
     </>
   );
 };

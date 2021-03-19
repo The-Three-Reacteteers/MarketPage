@@ -28,7 +28,7 @@ const Search = () => {
   } = useContext(BookWishlistContext);
   return (
     <>
-      <Card className="search-cards">
+<Card className="search-cards">
         <form>
           <Card.Header>
             <h3>Search for a Book</h3>
@@ -69,6 +69,9 @@ const Search = () => {
                   placeholder="ISBN"
                 />
               </div>
+            </Col>
+            </Row>
+            <Row>
               <Button
                 onClick={() => search({ author, title, isbn })}
                 className="buttons-center"
@@ -76,8 +79,7 @@ const Search = () => {
               >
                 <div className="small-text">Search</div>
               </Button>
-            </Col>
-          </Row>
+            </Row>
         </form>
       </Card>
       <Card className="search-cards">
