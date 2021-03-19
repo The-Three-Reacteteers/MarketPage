@@ -4,38 +4,24 @@ import { Col, Jumbotron, Row } from "reactstrap";
 import { BookCollectionContext } from "../../data/BookCollectionProvider";
 import Navigation from "./Navbar";
 
-/*
-function getBookDetails(isbn) {
+const previewUrl = function (isbn) {
 
-  // Query the book database by ISBN code.
-  isbn = isbn || "9781451648546"; // Steve Jobs book
+  isbn = '9780198748250';
 
-  var url = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn;
-
-  var response = UrlFetchApp.fetch(url);
-  var results = JSON.parse(response);
-
-  if (results.totalItems) {
-
-    // There'll be only 1 book per ISBN
-    var book = results.items[0];
-
-    var title = (book["volumeInfo"]["title"]);
-    var subtitle = (book["volumeInfo"]["subtitle"]);
-    var authors = (book["volumeInfo"]["authors"]);
-    var printType = (book["volumeInfo"]["printType"]);
-    var pageCount = (book["volumeInfo"]["pageCount"]);
-    var publisher = (book["volumeInfo"]["publisher"]);
-    var publishedDate = (book["volumeInfo"]["publishedDate"]);
-    var webReaderLink = (book["accessInfo"]["webReaderLink"]);
-
-    // For debugging
-    console.log(book);
+    return fetch(`"https://www.googleapis.com/books/v1/volumes?q=isbn:"${isbn}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        console.log(data.webReaderLink);
+        return data.webReaderLink;
+      })
+      .catch((err) => {
+        console.error(err)
+      });
 
   }
 
-}
-*/
+
 
 const Collection = () => {
   const {
