@@ -10,11 +10,11 @@ const CheckAuth = ({children, unAuthenticatedOnly, to}) => {
       if(to) return to
       if (!unAuthenticatedOnly) return `/login?redirect=${encodeURIComponent(pathname)}`
       const s = search.slice(1).split('&').map(s => s.split('='));
-      const [, redirect] = s.find(([key]) => key == "redirect") || [];
-      return redirect ? decodeURIComponent(redirect) : '/'
+      const [, redirect] = s.find(([key]) => key === "redirect") || [];
+      return redirect ? decodeURIComponent(redirect) : '/search'
   }, [search, to, unAuthenticatedOnly, pathname])
-  return user === undefined || loading ? (
-    <div>{JSON.stringify(user)}Loading..</div>
+  return user === undefined ? (
+    <div>Loading..</div>
   ) : (unAuthenticatedOnly ? !!user : !user) ? (
     <Redirect to={redirect} />
   ) : (

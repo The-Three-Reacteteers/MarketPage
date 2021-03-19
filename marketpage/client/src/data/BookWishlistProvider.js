@@ -66,7 +66,10 @@ export const BookWishlistProvider = ({ children }) => {
       });
   };
   useEffect(() => {
-    load();
+    if (user !== undefined)   {
+      if (user) load();
+      else setWishlist([])
+    };
   }, [user]);
   useEffect(() => {
     if (Array.isArray(wishlist) && wishlist.length) {

@@ -6,11 +6,20 @@ export function useAuthContext() {
 }
 export const responseParser = (response) => {
   if (response.status != 200) {
-    const error = new Error(`Something went wrong!`)
-    error.response = response;
-    throw error
+    return response
+      .json()
+      .then(
+        ({ errors, error, err, message }) =>
+          errors || error || err || message || `Something went wrong!`
+      )
+      .catch(() => `Something went wrong!`)
+      .then((err) => {
+        const error = new Error(err);
+        error.response = response;
+        throw error;
+      });
   }
-  return response.json()
+  return response.json();
 };
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(undefined);
@@ -27,6 +36,21 @@ export const AuthProvider = ({ children }) => {
       .catch((err) => {
         console.error(err);
         setUser(null);
+        // alert(err.message);
+        setLoading(false);
+      });
+  };
+
+  const logout = function () {
+    setLoading(true);
+    return fetch(`api/auth/logout`)
+      .then(responseParser)
+      .then((data) => {
+        setUser(null);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
         // alert(err.message);
         setLoading(false);
       });
@@ -51,6 +75,29 @@ export const AuthProvider = ({ children }) => {
         console.error(err);
         alert(err.message);
         setLoading(false);
+      });
+  };
+  const updatePassword = function (password, newPassword) {
+    setLoading(true);
+    return fetch(`api/auth/update-password`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ password, newPassword }),
+    })
+      .then(responseParser)
+      .then((data) => {
+        setUser(data || null);
+        setLoading(false);
+        return true
+      })
+      .catch((err) => {
+        console.error(err);
+        alert(err.message);
+        setLoading(false);
+        return false
       });
   };
 
@@ -89,6 +136,8 @@ export const AuthProvider = ({ children }) => {
         refreshAuth: load,
         login,
         signup,
+        logout,
+        updatePassword,
       }}
     >
       {children}
