@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useAuthContext } from "./AuthProvider";
+​
 export const BookSearchContext = React.createContext(null);
+​
 export const BookSearchProvider = ({ children }) => {
+  const { user } = useAuthContext();
   const [books, setBooks] = useState(null);
   const [loading, setLoading] = useState(false);
   const search = function ({ author, title, isbn }) {
@@ -10,7 +14,7 @@ export const BookSearchProvider = ({ children }) => {
       title && `title=${title}`,
       author && `author=${author}`,
       isbn && `isbn=${isbn}`,
-      `type=book`
+      `type=book`,
     ]
       .filter((q) => q)
       .join("&");
@@ -20,7 +24,6 @@ export const BookSearchProvider = ({ children }) => {
       .then((data) => {
         setBooks(data);
         setLoading(false);
-        console.log(data);
         return data;
       })
       .catch((err) => {
@@ -28,7 +31,9 @@ export const BookSearchProvider = ({ children }) => {
         setLoading(false);
       });
   };
-
+  useEffect(() => {
+    setBooks(null);
+  }, [user]);
   return (
     <BookSearchContext.Provider
       value={{
