@@ -5,23 +5,6 @@ import { useAuthContext } from "../../data/AuthProvider";
 import { BookCollectionContext } from "../../data/BookCollectionProvider";
 import Navigation from "./Navbar";
 
-const previewUrl = function (isbn) {
-
-  isbn = '9780198748250';
-
-    return fetch(`"https://www.googleapis.com/books/v1/volumes?q=isbn:"${isbn}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        console.log(data.webReaderLink);
-        return data.webReaderLink;
-      })
-      .catch((err) => {
-        console.error(err)
-      });
-
-  }
-
 const Collection = () => {
   const {
     removeCollection,
