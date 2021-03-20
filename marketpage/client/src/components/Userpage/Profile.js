@@ -15,7 +15,7 @@ const Profile = () => {
         <Card.Body>
 
           <Card.Text className="profile-text">
-            Welcome back {user.firstname}!
+            Welcome back, {user.firstname}!
             <br></br>
             Use the navigation above to check out your collection and wishlist.
           </Card.Text>

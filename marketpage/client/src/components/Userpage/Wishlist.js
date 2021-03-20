@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Col, Jumbotron, Row } from "reactstrap";
+import { useAuthContext } from "../../data/AuthProvider";
 import { BookWishlistContext } from "../../data/BookWishlistProvider";
 import Navigation from "./Navbar";
 
 const Wishlist = () => {
+  const { user } = useAuthContext();
   const {
     removeWishlist,
     wishlist,
@@ -13,6 +15,8 @@ const Wishlist = () => {
   return (
     <>
       <Navigation />
+      <Card className="wishlist">
+        <Card.Header>{user.firstname}'s Wishlist</Card.Header>
       {wishlist?.length ? wishlist.map((doc) => (
         <Row style={{ borderBottom: "1px solid #ccc", padding: 10 }}>
           <Col xs="2" xl="1">
@@ -26,12 +30,12 @@ const Wishlist = () => {
               alt="Cover"
             />
           </Col>
-          <Col xs="7" xl="8">
+          <Col>
             <Row className="book-title">{doc.title}</Row>
             <Row className="book-author">{doc.author}</Row>
             {doc.isbn && <Row className="book-isbn">ISBN: {doc.isbn}</Row>}
           </Col>
-            <Col xs="2" className="remove">
+            <Col xs="1" className="remove">
               <Row className="price"></Row>
               <Row>
                 <Button className="buttons" size="sm" active>
@@ -50,8 +54,9 @@ const Wishlist = () => {
             </Col>
         </Row>
       )):(
-          <Jumbotron>No Data</Jumbotron>
+          <Jumbotron>You don't have anything in your Wishlist! Go search for some new books!</Jumbotron>
       )}
+      </Card>
     </>
   );
 };

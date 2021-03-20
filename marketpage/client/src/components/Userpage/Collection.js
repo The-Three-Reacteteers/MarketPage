@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Col, Jumbotron, Row } from "reactstrap";
+import { useAuthContext } from "../../data/AuthProvider";
 import { BookCollectionContext } from "../../data/BookCollectionProvider";
 import Navigation from "./Navbar";
 
@@ -21,17 +22,18 @@ const previewUrl = function (isbn) {
 
   }
 
-
-
 const Collection = () => {
   const {
     removeCollection,
     collection,
     loading: loadingCollection,
   } = useContext(BookCollectionContext);
+  const { user } = useAuthContext();
   return (
     <>
       <Navigation />
+      <Card className="collection">
+      <Card.Header>{user.firstname}'s Collection</Card.Header>
       {collection?.length ? (
         collection.map((doc) => {
           return (
@@ -47,12 +49,12 @@ const Collection = () => {
                   alt="Cover"
                 />
               </Col>
-              <Col xs="7" xl="8">
+              <Col>
                 <Row className="book-title">{doc.title}</Row>
                 <Row className="book-author">{doc.author}</Row>
                 {doc.isbn && <Row className="book-isbn">ISBN: {doc.isbn}</Row>}
               </Col>
-              <Col xs="2" className="remove">
+              <Col xs="1" className="remove">
                 <Row className="price"></Row>
                 <Row>
                   <Button className="buttons" size="sm" active>
@@ -69,8 +71,9 @@ const Collection = () => {
           );
         })
       ) : (
-        <Jumbotron>No Data</Jumbotron>
+        <Jumbotron>You don't have anything in your Collection! Go search for some new books!</Jumbotron>
       )}
+      </Card>
     </>
   );
 };
