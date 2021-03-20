@@ -17,7 +17,7 @@ module.exports = {
     const bookSearchTitle = req.params.title;
     const bookSearchIsbn = req.params.isbn;
     fetch(
-      `http://openlibrary.org/search.json?title=${bookSearchTitle}&author=${bookSearchAuthor}&isbn=${bookSearchIsbn}`
+      `https://openlibrary.org/search.json?title=${bookSearchTitle}&author=${bookSearchAuthor}&isbn=${bookSearchIsbn}`
     )
       .then((response) => response.json())
       .then((data) => res.json(data));

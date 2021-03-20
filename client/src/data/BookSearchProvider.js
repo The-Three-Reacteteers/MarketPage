@@ -15,7 +15,7 @@ export const BookSearchProvider = ({ children }) => {
       .filter((q) => q)
       .join("&");
     setLoading(true);
-    return fetch(`http://openlibrary.org/search.json?${query}`)
+    return fetch(`https://openlibrary.org/search.json?${query}`)
       .then((response) => response.json())
       .then((data) => {
         setBooks(data);
