@@ -15,6 +15,10 @@ So you say you're a fan of books? If so, come on over to MarketPage, your one-st
 
 ---
 
+![MarketPage (1)](https://user-images.githubusercontent.com/70424037/111858410-17199780-890f-11eb-8712-c77ccc003d1b.gif)
+
+---
+
 ## How To Use:
 
 Head on over to the sign-up page to create your own account. Once you do so, you can then start adding books to your collection by providing the name and author, look up new books to add to your wishlist, look up info on all books, and find pricing if you're looking to buy or sell.
