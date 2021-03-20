@@ -12,7 +12,7 @@ const Homepage = () => {
       <ParticlesJS />
       <Container fluid className="bkg-blk pt-3">
         <Row>
-          <img src={Logo} className="logo" />
+        <img src={Logo} className="logo z-index"/>
         </Row>
         <br></br>
         <br></br>
