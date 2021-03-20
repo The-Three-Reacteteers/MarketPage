@@ -11,15 +11,9 @@ const Homepage = () => {
         <>
         <ParticlesJS/>
         <Container fluid className="bkg-blk pt-3" >
-            <Row>
-                <Col xs="6">
-                    <img src={Logo} />
-                </Col>
-                <Col xs="3">
-                    <h5 className="home-text">Join a sprawling community that shares your interest in books! Sign up to start your collection and wish list as well as learn more information on new and old books!</h5>
-                </Col>
+            <Row >
+                <img src={Logo} className="logo"/>
             </Row>
-
         <br></br>
         <Row><Col><h1 className="mt-4 mb-4 text-white genre-fz" >Books to Enjoy</h1></Col></Row>
     <CardDeck className="ml-5 mr-5">
