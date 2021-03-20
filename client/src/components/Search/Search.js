@@ -114,7 +114,8 @@ const Search = () => {
                       <Row className="book-title">{doc.title}</Row>
                       <Row className="book-author">{doc.author_name}</Row>
                       {isbn && <Row className="book-isbn">ISBN: {isbn}</Row>}
-                      {desc && <Row className="book-desc">First sentence: <br></br>"{desc}"</Row>}
+                      {desc && <Row className="book-desc">First sentence: </Row>}{desc && <Row>"{desc}"</Row>}
+
                     </Col>
                     {user && (
                       <Col xs="1" className="remove">
