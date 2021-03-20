@@ -26,7 +26,7 @@ const Collection = () => {
                   style={{ width: "100%" }}
                   src={
                     doc.cover_i && doc.cover_i > 0
-                      ? `http://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`
+                      ? `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`
                       : "https://openlibrary.org/images/icons/avatar_book-lg.png"
                   }
                   alt="Cover"
