@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthContext } from "./AuthProvider";
-​
 export const BookSearchContext = React.createContext(null);
-​
 export const BookSearchProvider = ({ children }) => {
   const { user } = useAuthContext();
   const [books, setBooks] = useState(null);
