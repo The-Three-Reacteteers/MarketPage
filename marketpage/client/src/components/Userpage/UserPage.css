@@ -53,13 +53,18 @@ p {
 }
 
 .book-author {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 .book-desc {
     font-weight: bold;
     font-size: 14px;
+}
+
+.book-isbn {
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .remove {
@@ -81,4 +86,13 @@ p {
     background-color: #424344 !important;
     border-color: white !important;
     border-radius: 6px !important;
+}
+
+.wishlist, .collection {
+    width: 60%
+}
+
+.jumbotron {
+    background-color: white !important;
+    text-align: center;
 }

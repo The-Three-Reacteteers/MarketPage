@@ -70,6 +70,9 @@ const Search = () => {
                   placeholder="ISBN"
                 />
               </div>
+            </Col>
+          </Row>
+          <Row>
               <Button
                 onClick={() => search({ author, title, isbn })}
                 className="buttons-center"
@@ -77,7 +80,6 @@ const Search = () => {
               >
                 <div className="small-text">Search</div>
               </Button>
-            </Col>
           </Row>
         </form>
       </Card>
@@ -108,15 +110,14 @@ const Search = () => {
                         alt="Cover"
                       />
                     </Col>
-                    <Col xs="7" xl="8">
+                    <Col>
                       <Row className="book-title">{doc.title}</Row>
                       <Row className="book-author">{doc.author_name}</Row>
                       {isbn && <Row className="book-isbn">ISBN: {isbn}</Row>}
                       {desc && <Row className="book-desc">First sentence: <br></br>"{desc}"</Row>}
                     </Col>
                     {user && (
-                      <Col xs="2" className="remove">
-                        <Row className="price"></Row>
+                      <Col xs="1" className="remove">
                         <Row>
                           <Button className="buttons" size="sm" active>
                             <div
