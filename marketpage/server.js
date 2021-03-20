@@ -22,7 +22,12 @@ const MONGODB_URI =
   process.env.MONGODB_URI || "mongodb://localhost/MarketPage";
 // Connect to the Mongo DB
 mongoose
-  .connect(MONGODB_URI)
+  .connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+ })
   .then(() => {
     console.log(`MongoDB connected ${MONGODB_URI}`);
 
